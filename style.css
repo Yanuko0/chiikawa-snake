@@ -162,12 +162,17 @@ div.food{
 /* 一般的樣式 */
 
 /* 手機端的樣式 */
-@media only screen and (max-width: 700px) {
+@media (max-width:600px) {
     .map {
-        left: -16vh;
-        transform: scale(0.5); /* 縮小為原來的 80% */
-        width: 800px; /* 保持地圖元素的寬度為畫面寬度的 80% */
-        height: 1000px; /* 讓高度自動適應內容，以保持原始寬高比例 */
+
+        
+        width: 800px; /* 你可以根據需要調整地圖在手機畫面上的寬度百分比 */
+        height: 1200px; /* 讓高度自動適應內容，以保持原始寬高比例 */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        
     }
 
     .map > div {
@@ -176,19 +181,20 @@ div.food{
     }
 
     .panbg{
-    width: 410px;
-    height: 500px;
+    width: 800px;
+    height: 1200px;
     background: rgba(0, 0, 0, 0.781) url(圖/gameover.png) no-repeat;
-    background-size: 400px;
+    background-size: 800px;
     background-position: center;
     position: fixed;
     z-index: 999;
-    top:0;
-    left: 0;
+    top:100%;
+    left: 50%;
     right: 0;
     bottom: 0;
     margin: auto;
     display: none;
+    transform: translate(-50%, -50%) scale(0.5);
 
 
     }
