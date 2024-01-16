@@ -196,9 +196,9 @@ div.food{
     /*按鈕部分*/
     .btnbox {
         position: fixed;
-        top: -20vh;
-        left: -7vh;
-        width: 100%;
+        top: -30vh;
+        left: 0vh;
+        width: 80%;
         display: flex;
         flex-direction: row; /* 橫向排列 */
         justify-content: space-around; /* 將按鈕平均分配在空間中 */
