@@ -5,21 +5,23 @@ document.addEventListener('touchstart', function(e) {
     const touchX = e.touches[0].clientX;
     const touchY = e.touches[0].clientY;
 
-    // 取得蛇頭的座標
-    const head = game.snake.snakelist[0];
-    const headX = head.offsetLeft;
-    const headY = head.offsetTop;
+    // 取得螢幕的寬度和高度
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-    // 判斷觸控的位置與蛇頭的位置關係，決定改變方向
-    if (touchX < headX) {
-        game.change("left");
-    } else if (touchX > headX) {
-        game.change("right");
-    } else {
-        if (touchY < headY) {
-            game.change("top");
-        } else if (touchY > headY) {
-            game.change("bottom");
-        }
+    // 計算觸控位置相對於畫面中心的相對位置
+    const deltaX = touchX - screenWidth / 2;
+    const deltaY = touchY - screenHeight / 2;
+
+    // 設定一個閥值，當觸控距離超過閥值時才改變方向
+    const threshold = 50;
+
+    // 判斷觸控位置相對於畫面中心的方向，並改變方向
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
+        // 橫向移動
+        game.change(deltaX > 0 ? "right" : "left");
+    } else if (Math.abs(deltaY) > threshold) {
+        // 縱向移動
+        game.change(deltaY > 0 ? "bottom" : "top");
     }
 });
