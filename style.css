@@ -162,12 +162,12 @@ div.food{
 /* 一般的樣式 */
 
 /* 手機端的樣式 */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .map {
         left: -16vh;
         transform: scale(0.5); /* 縮小為原來的 80% */
         width: 800px; /* 保持地圖元素的寬度為畫面寬度的 80% */
-        height: 1200px; /* 讓高度自動適應內容，以保持原始寬高比例 */
+        height: 1000px; /* 讓高度自動適應內容，以保持原始寬高比例 */
     }
 
     .map > div {
@@ -177,7 +177,7 @@ div.food{
 
     .panbg{
     width: 410px;
-    height: 600px;
+    height: 500px;
     background: rgba(0, 0, 0, 0.781) url(圖/gameover.png) no-repeat;
     background-size: 400px;
     background-position: center;
